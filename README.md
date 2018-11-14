@@ -32,7 +32,7 @@ After Ubuntu operating system installation is completed, log into the server as 
 Bootstrap the core utilities:
 
     sudo apt update && sudo apt install net-tools curl -y && \
-    curl https://raw.githubusercontent.com/shah/appliance-setup-framework/master/bin/bootstrap.sh | bash
+    curl https://raw.githubusercontent.com/rinshadka/appliance-setup-metrics/master/bin/bootstrap.sh | bash
 
 After bootstrap.sh is complete, exit the shell.
 
@@ -44,6 +44,16 @@ After you've exited, log back in as the *admin user* and review the appliance.se
     sudo vi appliance.secrets.ansible-vars.yml
 
 The **appliance.secrets-tmpl.ansible-vars.yml** file is a template (sample), and the **appliance.secrets.ansible-vars.yml** is what will be used by the Ansible and related setup utilities.
+    
+    cd /etc/appliance-setup-framework/conf
+    sudo vi postgres.secrets.ccf-conf.jsonnet
+
+The **postgres.secrets.ccf-tmpl-conf.jsonnet** file is a template (sample), and the **postgres.secrets.ccf-conf.jsonnet** is what used by the postgres CCF container.
+
+    cd /etc/appliance-setup-framework/conf
+    sudo vi grafana.secrets.ccf-conf.jsonnet
+
+The **grafana.secrets.ccf-tmpl-conf.jsonnet** file is a template (sample), and the **grafana.secrets.ccf-conf.jsonnet** is what used by the grafana CCF container.
 
 If you have any custom playbooks, add them to /etc/appliance-setup-framework/playbooks. The bin/setup.sh utility will run all numbered playbooks in numerical order. 
 
