@@ -1,0 +1,16 @@
+defaults:
+  data-source: MetricsNet
+  query-interval: 1m
+  query-timeout: 15s
+  query-value-on-error: -1
+
+data-sources:
+ metricsNet:
+    driver: postgresql
+    properties:
+      database: metricnet
+      host: 192.168.1.8
+      password: postgres
+      port: 5432
+      user: postgres
+      sslmode: disable

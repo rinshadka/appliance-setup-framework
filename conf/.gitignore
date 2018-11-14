@@ -1,1 +1,4 @@
-appliance.secrets.conf.yml
+appliance.secrets.ansible-vars.yml
+postgres.secrets.ccf-conf.jsonnet
+grafana.secrets.ccf-conf.jsonnet
+

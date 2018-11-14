@@ -1,0 +1,36 @@
+---
+- name: Metrics Net CCF Containers
+  hosts: all
+  vars_files:
+    - ../conf/appliance.common.ansible-vars.yml
+  tasks:
+
+    - name: Create Appliance Admin User common runtime config directory
+      file:
+        path: '{{ appliance_admin_user_common_runtime_config_directory }}'
+        state: directory
+    - name: Create Appliance Admin User Secrets directory
+      file:
+        path: '{{ appliance_admin_user_secret_directory }}'
+        state: directory
+
+    - name: Go to Traefik directory and install Traefik routing CCF Container service
+      command: chdir={{ traefik_ccf_container_path }} ccfmake start
+
+    - name: Go to Postgres directory and install Postgres CCF Container service
+      command: chdir={{ postgres_ccf_container_path }} ccfmake start
+
+    - name: Go to sql-agent directory and install sql-agent CCF Container service
+      command: chdir={{ sql_agent_ccf_container_path }} ccfmake start
+
+    - name: Go to prometheus-sql-agent-exporter directory and install prometheus-sql-agent-exporter CCF Container service
+      command: chdir={{ prometheus_sql_agent_exporter_ccf_container_path }} ccfmake start
+
+    - name: Go to prometheus directory and install prometheus CCF Container service
+      command: chdir={{ prometheus_ccf_container_path }} ccfmake start
+
+    - name: Go to grafana  directory and install grafana CCF Container service
+      command: chdir={{ grafana_ccf_container_path }} ccfmake start
+
+    - name: Go to portainer directory and install portainer CCF Container service
+      command: chdir={{ portainer_ccf_container_path }} ccfmake start

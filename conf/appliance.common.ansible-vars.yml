@@ -29,3 +29,14 @@ samba_shares:
 dragonfly_mta_insecure: false
 dragonfly_mta_securetransfer: true
 dragonfly_mta_starttls: true
+
+
+appliance_admin_user_common_runtime_config_directory: "/home/{{ appliance_admin_user }}/.ccf/etc"
+appliance_admin_user_secret_directory: "/home/{{ appliance_admin_user }}/.ccf/secrets"
+traefik_ccf_container_path: /opt/metricsnet-ccf-containers/traefik
+postgres_ccf_container_path: /opt/metricsnet-ccf-containers/postgres
+prometheus_ccf_container_path: /opt/metricsnet-ccf-containers/prometheus
+grafana_ccf_container_path: /opt/metricsnet-ccf-containers/grafana
+sql_agent_ccf_container_path: /opt/metricsnet-ccf-containers/sql-agent
+prometheus_sql_agent_exporter_ccf_container_path: /opt/metricsnet-ccf-containers/prometheus-sql-agent-exporter
+portainer_ccf_container_path: /opt/metricsnet-ccf-containers/portainer

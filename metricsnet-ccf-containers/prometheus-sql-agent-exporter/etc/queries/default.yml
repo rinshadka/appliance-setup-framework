@@ -1,0 +1,8 @@
+- labour_parts_revenue_total:
+    data-source: metricsNet
+    sql: >
+        select ro_details.ro_Date,
+         (sum(ro_details.ro_cp_laborrevenue) + sum(ro_details.ro_cp_partsrevenue)) as total from repair_order.ro_details group by ro_details.ro_Date ;
+    interval: 15s
+    data-field: total
+
