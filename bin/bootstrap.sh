@@ -16,8 +16,8 @@ title "Install roles from Ansible Galaxy"
 sudo ansible-galaxy install viasite-ansible.zsh
 sudo ansible-galaxy install robertdebock.ara
 
-sudo echo "export ASF_HOME=/etc/appliance-setup-framework" >> /etc/profile
-source /etc/profile
+sudo echo "export ASF_HOME=/etc/appliance-setup-framework" >> ~/.bashrc
+source ~/.bashrc
 
 title "Download distribution into $ASF_HOME"
 sudo git clone --recurse https://github.com/rinshadka/appliance-setup-metrics $ASF_HOME
