@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 sudo echo "export ASF_HOME=/etc/appliance-setup-framework" >> ~/.bashrc
 exec bash
 
