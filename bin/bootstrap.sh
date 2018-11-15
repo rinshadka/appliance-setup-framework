@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-
-sudo echo "export ASF_HOME=/etc/appliance-setup-framework" >> ~/.bashrc
-exec bash
-
 title() {
     local color='\033[1;37m'
     local nc='\033[0m'
@@ -19,6 +15,9 @@ sudo apt-get install -y curl wget ansible git make python-pip
 title "Install roles from Ansible Galaxy"
 sudo ansible-galaxy install viasite-ansible.zsh
 sudo ansible-galaxy install robertdebock.ara
+
+export ASF_HOME=/etc/appliance-setup-framework
+echo "export ASF_HOME=/etc/appliance-setup-framework" >> ~/.bashrc
 
 title "Download distribution into $ASF_HOME"
 sudo git clone --recurse https://github.com/rinshadka/appliance-setup-metrics $ASF_HOME
