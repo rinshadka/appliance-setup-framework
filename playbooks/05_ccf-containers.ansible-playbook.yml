@@ -3,6 +3,7 @@
   hosts: all
   vars_files:
     - ../conf/appliance.common.ansible-vars.yml
+    - ../conf/appliance.secrets.ansible-vars.yml
   tasks:
 
     - name: Create Appliance Admin User common runtime config directory
